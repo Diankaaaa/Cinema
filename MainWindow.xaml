@@ -37,13 +37,9 @@
                 <Label Content="Жанр фильма:" Foreground="White" FontSize="16"/>
                 <TextBox x:Name="GENRE" Height="30" SelectionBrush="#FF00FFE8" Foreground="White" Background="#FF686868" FontSize="16" />
             </StackPanel>
-            <StackPanel Grid.Row="4" Orientation="Horizontal" Margin="10">
-                <Label Content="Время начала:" Foreground="White" FontSize="16" Margin="0,0,0,31" Width="114"/>
-                <TextBox x:Name="HOURS" Width="50" Height="30" SelectionBrush="#FF00FFE8" Foreground="White" Background="#FF686868" FontSize="16" Margin="0 10 10 0"/>
-                <TextBox x:Name="MINUTES" Width="50" Height="30" SelectionBrush="#FF00FFE8" Foreground="White" Background="#FF686868" FontSize="16" Margin="0 10 10 0"/>
-
-
-
+            <StackPanel Grid.Row="4" Margin="10" Height="70">
+                <Label Content="Время начала:" Foreground="White" FontSize="16" Width="114" HorizontalAlignment="Left"/>
+                <TextBox x:Name="DT1" Height="30" SelectionBrush="#FF00FFE8" Foreground="White" Background="#FF686868" FontSize="16"/>
             </StackPanel>
             <StackPanel Grid.Row="5" Margin="10">
                 <Label Content="Длительность в минутах:" Foreground="White" FontSize="16"/>
@@ -53,8 +49,6 @@
                 <Button x:Name="ADD" Content="Добавить" Width="100" Height="50" Background="#FF686868" Foreground="White" FontSize="16" Click="ADD_Click"/>
                 <Button x:Name="CLEAR" Content="Очистить поля" Margin="10 0 0 0" Width="120" Height="50" FontSize="16" Background="#FF686868" Foreground="White" Click="CLEAR_Click"/>
             </StackPanel>
-            <Label Grid.Row="4" Content="Минуты" FontSize="16" Foreground="White" Margin="178,55,-29,76" Grid.RowSpan="2"/>
-            <Label Grid.Row="4" Content="Часы" FontSize="16" Foreground="White" Margin="120,55,75,76" Grid.RowSpan="2"/>
         </Grid>
         <Grid Grid.Column="0">
             <Grid.RowDefinitions>
@@ -68,8 +62,7 @@
                         <GridViewColumn DisplayMemberBinding="{Binding Path=Dt}">Дата сеанса</GridViewColumn>
                         <GridViewColumn DisplayMemberBinding="{Binding Path=MovieTitle}">Название фильма</GridViewColumn>
                         <GridViewColumn DisplayMemberBinding="{Binding Path=Genre}">Жанр</GridViewColumn>
-                        <GridViewColumn DisplayMemberBinding="{Binding Path=Hours}">Час начала</GridViewColumn>
-                        <GridViewColumn DisplayMemberBinding="{Binding Path=Minutes}">Минута начала</GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=Datet}">Начало</GridViewColumn>
                         <GridViewColumn DisplayMemberBinding="{Binding Path=Duration}">Длительность</GridViewColumn>
                         <GridViewColumn DisplayMemberBinding="{Binding Path=Ending}">Окончание</GridViewColumn>
                     </GridView>

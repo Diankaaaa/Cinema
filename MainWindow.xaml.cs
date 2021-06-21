@@ -35,65 +35,16 @@ namespace Cinema
                 DateTime d = DT.SelectedDate.Value;
                 string Movie_Title = MOVIETITlE.Text;
                 string Genre_ = GENRE.Text;
-                int Hourse_ = int.Parse(HOURS.Text);
-                int Minutes_ = int.Parse(MINUTES.Text);
-                int Duration_ = int.Parse(DURATION.Text);
+                string dt = DT1.Text;
+                double duration = double.Parse(DURATION.Text);
 
-                int Result_Hourse = Hourse_;
-                int res = 0;
-                int result = Duration_ + Minutes_;
-                string FinalResult = " ";
-                if (result > 60)
-                {
-                    res = Duration_ + Minutes_ - 60;
-                    if (res >= 60)
-                    {
-                        while (res >= 60)
-                        {
-                            res -= 60;
-                            Result_Hourse += 1;
-                        }
-                    }
-                    Result_Hourse += 1;
-                    FinalResult = String.Join(" : ", Result_Hourse, res);
-                    //Cinemas resTime = new Cinemas(FinalResult);
-                    //cinemas.Add(resTime);
-                    // AddInList();
-                    //  MessageBox.Show(FinalResult);
-                }
-                else if (result == 60)
-                {
-                    Result_Hourse += 1;
-                    FinalResult = Result_Hourse + " : " + Minutes_;
-                    //Cinemas resTime = new Cinemas(FinalResult);
-                    //cinemas.Add(resTime);
-                    //  AddInList();
-                    //   MessageBox.Show(FinalResult);
-                }
-                else
-                {
-                    res = Duration_ + Minutes_;
-                    FinalResult = Result_Hourse + " : " + res;
-                    //Cinemas resTime = new Cinemas(FinalResult);
-                    //cinemas.Add(resTime);
-                    //  AddInList();
-                    // MessageBox.Show(FinalResult);
-                }
+                Times en = new Times(dt);
+                string Ending = (en.AddingTheTimeAndTheSpecifiedNumberOfSeconds(DateTime.Parse(dt), duration)).ToString("HH:mm");
+                
 
-                if(Result_Hourse >= 24)
-                {
-                    Result_Hourse -= 24;
-                    if(Result_Hourse >= 24)
-                    {
-                        while(Result_Hourse >= 24)
-                        {
-                            Result_Hourse -= 24;
-                        }
-                    }
-                    FinalResult = Result_Hourse + " " + res;
-                }
-                Cinemas cinem = new Cinemas(Movie_Theatre_Name, d, Movie_Title, Genre_, Hourse_, Minutes_, Duration_, FinalResult);
+                Cinemas cinem = new Cinemas(Movie_Theatre_Name, d, Movie_Title, Genre_, dt, duration, Ending);
                 cinemas.Add(cinem);
+                
               //  ResultTime();
                 AddInList();
             }
@@ -111,8 +62,7 @@ namespace Cinema
             Panels.ItemsSource = null;
             Panels.ItemsSource = cin;
             DT.SelectedDate = DateTime.Now;
-            HOURS.Clear();
-            MINUTES.Clear();
+            
         }
         private void AddInList()
         {
@@ -129,8 +79,6 @@ namespace Cinema
                 DT.SelectedDate = null;
                 MOVIETITlE.Text = String.Empty;
                 GENRE.Text = String.Empty;
-                HOURS.Text = String.Empty;
-                MINUTES.Text = String.Empty;
                 DURATION.Text = String.Empty;
             }
             catch(Exception ex)
