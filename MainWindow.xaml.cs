@@ -112,51 +112,5 @@ namespace Cinema
                 MessageBox.Show(er.Message);
             }
         }
-
-        //private void ResultTime()
-        //{
-        //    int Hourse_ = int.Parse(HOURS.Text);
-        //    int Minutes_ = int.Parse(MINUTES.Text);
-        //    int Duration_ = int.Parse(DURATION.Text);
-
-        //    int res = 0;
-        //    int result = Duration_ + Minutes_;
-        //    string FinalResult = " ";
-        //    if (result > 60)
-        //    {
-        //        res = Duration_ + Minutes_ - 60;
-        //        if (res >= 60)
-        //        {
-        //            while (res >= 60)
-        //            {
-        //                res -= 60;
-        //                Hourse_ += 1;
-        //            }
-        //        }
-        //        Hourse_ += 1;
-        //        FinalResult = String.Join(" ", Hourse_, res);
-        //        Cinemas resTime = new Cinemas(FinalResult);
-        //        cinemas.Add(resTime);
-        //       // AddInList();
-        //      //  MessageBox.Show(FinalResult);
-        //    } else if(result == 60) 
-        //    {
-        //        Hourse_ += 1;
-        //        FinalResult = Hourse_ + " " + Minutes_;
-        //        Cinemas resTime = new Cinemas(FinalResult);
-        //        cinemas.Add(resTime);
-        //      //  AddInList();
-        //     //   MessageBox.Show(FinalResult);
-        //    }
-        //    else
-        //    {
-        //        res = Duration_ + Minutes_;
-        //        FinalResult = Hourse_ + " " + res;
-        //        Cinemas resTime = new Cinemas(FinalResult);
-        //        cinemas.Add(resTime);
-        //      //  AddInList();
-        //       // MessageBox.Show(FinalResult);
-        //    }
-        //}
     }
 }
